@@ -1,23 +1,15 @@
 package com.crazysalaryman;
 
-import com.crazysalaryman.app.*;
 import com.crazysalaryman.domain.Customer;
-import com.crazysalaryman.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Scanner;
 
 /**
  * Created by lse0101 on 2017-01-13.
@@ -31,8 +23,7 @@ public class App implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        String sql = "SELECT id, first_name, last_name FROM customers WHERE id = :id";
-        SqlParameterSource param = new MapSqlParameterSource()
+        String sql = "SELECT id, first_name, last_name FROM customers WHERE id = :id"; SqlParameterSource param = new MapSqlParameterSource()
                 .addValue("id", 1);
 
         Customer result = jdbcTemplate.queryForObject(sql,
