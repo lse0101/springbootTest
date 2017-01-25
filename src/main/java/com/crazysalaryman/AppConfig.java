@@ -32,6 +32,7 @@ public class AppConfig {
 //        .url(this.dataSourceProperties.getUrl())
 //        .username(this.dataSourceProperties.getUsername())
 //        .password(this.dataSourceProperties.getPassword());
+    System.out.println(this.dataSourceProperties.getUrl());
     DataSourceBuilder factory = DataSourceBuilder.create();
 
     this.dataSource = factory.build();

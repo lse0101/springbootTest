@@ -25,7 +25,7 @@ repositories {
 idea {
     module {
         inheritOutputDirs = false
-        outputDir = file("build/classes/main/")
+        outputDir = file("${buildDir}/classes/main/")
     }
 }
 
