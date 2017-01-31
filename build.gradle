@@ -33,7 +33,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter') {
         exclude module: 'spring-boot-starter-tomcat'
     }
-    compile("org.springframework:spring-jdbc")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile("com.h2database:h2")
     compile('org.springframework.boot:spring-boot-starter-jetty')
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.12'
